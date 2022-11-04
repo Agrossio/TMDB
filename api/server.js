@@ -7,6 +7,7 @@ const routes = require('./routes')
 const cookieParser = require('cookie-parser')
 const morgan = require('morgan')
 const { PORT } = require("./env")
+
 require('./models/index')
 // require('dotenv').config()
 
@@ -35,6 +36,6 @@ app.use('/api', routes)             // Routes middleware: cualquier request que 
 db.sync({ force: false })
     .then(() => {
         console.log('DB Connected! :D')
-        console.log('PUERTO:', PORT)
+        // console.log('PUERTO:', PORT)
         app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}!`))
     })
